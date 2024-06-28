@@ -12,7 +12,7 @@ const Sections = () => (
 
           <h2 className="heading text-3xl text-zinc-100 font-bold mb-5">Our Installation Team</h2>
 
-          <p className="text-md indent-5 text-justify">Installation, We take personal pride in the quality of our Installation Team, having honed them into a tight unit with unrivalled experience and attention to detail. We are a cut above with our passion for accuracy and quality. With a focus on delivering projects as per customer needs Actimake Solutions is revolutionizing the way end customers receive solar energy, we are their choice to build trust in solar industry.
+          <p className="contentPara text-md indent-5 text-justify">Installation, We take personal pride in the quality of our Installation Team, having honed them into a tight unit with unrivalled experience and attention to detail. We are a cut above with our passion for accuracy and quality. With a focus on delivering projects as per customer needs Actimake Solutions is revolutionizing the way end customers receive solar energy, we are their choice to build trust in solar industry.
           </p>
 
           <div className="mt-8 font-semibold space-x-4">
