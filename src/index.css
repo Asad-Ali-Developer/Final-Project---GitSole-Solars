@@ -149,13 +149,24 @@ body {
 
 /* MEDIA QUERIES */
 
-@media (max-width: 370px){
+@media (max-width: 380px){
   .carousel-content{
-    position: absolute;
-    top: 80%;
+    top: 95%;
   }
+  #home{
+    height: 135vh;
+  }
+
 }
 
+@media (max-width: 575px){
+  .carousel-content{
+    top: 55%;
+  }
+  #home{
+    height: 120vh;
+  }
+}
 
 @media (max-width: 639px) {
   .carousel-container {
@@ -163,6 +174,14 @@ body {
     height: 500px;
     overflow: hidden;
     position: relative;
+  }
+
+  .carousel-content{
+    top: 90%;
+  }
+
+  #home{
+    height: 140vh;
   }
 
   .mainContainer{
@@ -303,7 +322,7 @@ body {
 
   .carousel-content {
     position: absolute;
-    top: 75%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: transparent;
@@ -316,8 +335,8 @@ body {
     gap: 10px;
   }
 
-  .Link{
-    
+  #home{
+    height: 120vh;
   }
 
   .heading {
