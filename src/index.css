@@ -8,20 +8,18 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(64, 85, 111);
+  background: rgb(41, 184, 103);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(44, 59, 78);
+  background: rgb(33, 151, 84);
 }
 
 body {
   font-family: Arial, sans-serif;
 }
 
-.section:hover {
-  background-color: #f8f9fa;
-}
+
 
 .navMobile {
   transition: max-height 0.3s ease-out;
@@ -39,15 +37,24 @@ body {
 
 /* Carousel.css */
 .carousel-inner {
+  width: 100%;
+  height: 100%;
   display: flex;
   transition: transform 1s ease-in-out;
+  box-shadow: inset 0px 0px 45px rgba(0, 0, 0, 0.3);
 }
 
 .carousel-item {
-  min-width: 100%;
+  width: 100%;
   height: 100%;
   position: relative;
 }
+
+.carousel-item > img{
+  display: inline-block;
+  box-shadow: inset 0 0 15px 5px rgba(0, 0, 0, 0.3);
+}
+
 
 .carousel-content {
   position: absolute;
@@ -61,12 +68,16 @@ body {
   max-width: 550px;
   height: auto;
   border-radius: 10px;
+  gap: 20px;
+}
+
+.carousel-content > .heading{
+  color: rgb(46, 198, 112);
 }
 
 .carousel-content a {
   transition: 0.3s ease-in-out;
-  border-top-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  color: rgb(46, 198, 112);
 }
 
 .carousel-controls {
@@ -81,7 +92,7 @@ body {
 }
 
 .carousel-controls button {
-  background-color: rgb(46, 46, 45);
+  background-color: rgb(41, 184, 103);
   padding: 10px;
   font-weight: 900;
   border-radius: 10px;
@@ -109,7 +120,43 @@ body {
   background-color: white;
 }
 
+.btnIntro:hover {
+  background-color: rgb(44, 193, 108);
+  color: white;
+}
+
+
+/* Styling for Services Section */
+
+
+.effect{
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.quick-links > a:hover{
+  color: rgb(86, 162, 244);
+  transition: 0.3s;
+}
+
+.our-services > a:hover{
+  color: rgb(86, 162, 244);
+  transition: 0.3s;
+}
+
+
+
+
 /* MEDIA QUERIES */
+
+@media (max-width: 370px){
+  .carousel-content{
+    position: absolute;
+    top: 80%;
+  }
+}
+
+
 @media (max-width: 639px) {
   .carousel-container {
     width: 100%;
@@ -118,38 +165,68 @@ body {
     position: relative;
   }
 
+  .mainContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    gap: 40px;
+  }
+
+  .Link{
+    width: 230px;
+  }
+
+  .servicesCard{
+    width: 70%;
+  }
+
+  .form{
+    width: 90%;
+  }
+
+  .aboutPara{
+    width: 90%;
+  }
+
   .carousel-item > img{
     aspect-ratio: 1/1;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), 10px 10px 20px rgba(0, 0, 0, 0.2);
+    /* border-radius: 5px; */
+  }
+
+  .carouselText{
+    margin: 0 !important;
   }
 
   .carousel-content {
     position: absolute;
-    top: 70%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: transparent;
     color: black;
     padding: 1rem;
     width: 100%;
-    max-width: 90%;
+    max-width: 95%;
     margin-inline: auto;
     border-radius: 10px;
+    display: flex;
+    gap: 15px;
   }
 
   .heading {
     font-size: 1.5rem;
-    color: #2563eb;
-    margin-top: 40px;
+    color: rgb(41, 184, 103);
+
   }
 
   .btnIntro {
-    border-color: #2563eb;
-    color: #2563eb;
-    margin-bottom: 1rem;
+    border-color: rgb(41, 178, 100);
+    /* border-radius: none; */
   }
 
   .btnIntro:hover {
-    background-color: #2563eb;
+    background-color: rgb(44, 193, 108);
     color: white;
   }
 
@@ -160,7 +237,7 @@ body {
 
   .carousel-navigation{
     position: absolute;
-    bottom: 8rem;
+    bottom: 5rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -174,6 +251,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(41, 184, 103);
   }
 
   .NavBar {
@@ -189,7 +267,7 @@ body {
     position: absolute;
     width: 100%;
     top: 50%;
-    bottom: 6rem;
+    /* bottom: 6rem; */
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -206,13 +284,26 @@ body {
     position: relative;
   }
 
+  .servicesCard{
+    width: 50%;
+  }
+
   .carousel-item > img{
     aspect-ratio: 4/3;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), 10px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .aboutPara{
+    width: 90%;
+  }
+
+  .form{
+    width: 80%;
   }
 
   .carousel-content {
     position: absolute;
-    top: 70%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: transparent;
@@ -222,12 +313,16 @@ body {
     max-width: 90%;
     margin-inline: auto;
     border-radius: 10px;
+    gap: 10px;
+  }
+
+  .Link{
+    
   }
 
   .heading {
-    font-size: 2rem;
-    color: #2563eb;
-    margin-top: 50px;
+    font-size: 1.6rem;
+    color: rgb(41, 184, 103);
   }
 
   .carouselText{
@@ -235,14 +330,14 @@ body {
   }
 
   .btnIntro {
-    border-color: #2563eb;
-    color: #2563eb;
-    margin-bottom: 1.5rem;
+    border-color: rgb(44, 193, 108);
+    color: rgb(44, 193, 108);
     font-weight: 600;
+    font-size: 1rem;
   }
 
   .btnIntro:hover {
-    background-color: #2563eb;
+    background-color: rgb(44, 193, 108);
     color: white;
   }
 
@@ -278,6 +373,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(41, 184, 103);
   }
 
   .NavBar {
@@ -299,41 +395,47 @@ body {
 
   .carousel-item > img{
     aspect-ratio: 3/2;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), 10px 10px 20px rgba(0, 0, 0, 0.2);
   }
 
   .carousel-content {
     position: absolute;
-    top: 80%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: transparent;
-    color: black;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
     padding: 1rem;
-    width: 100%;
-    max-width: 90%;
+    /* width: 100%; */
+    max-width: 50%;
     margin-inline: auto;
     border-radius: 10px;
+    gap: 15px;
+  }
+
+  .form{
+    width: 70%;
   }
 
   .heading {
-    font-size: 2rem;
-    color: #2563eb;
+    font-size: 1.5rem;
+    color: rgb(41, 184, 103);
     /* margin-top: 50px; */
   }
 
   .carouselText{
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .btnIntro {
-    border-color: #2563eb;
-    color: #2563eb;
-    margin-bottom: 2rem;
+    border-color: rgb(44, 193, 108);
+    color: rgb(44, 193, 108);
+    background-color: rgba(0, 0, 0, 0.6);
     font-weight: 600;
   }
 
   .btnIntro:hover {
-    background-color: #2563eb;
+    background-color: rgb(44, 193, 108);
     color: white;
   }
 
@@ -344,9 +446,9 @@ body {
 
   .carousel-navigation{
     position: absolute;
-    top: 65%;
+    top: 90%;
     left: 50%;
-    transform: translate(-50%, -65%);
+    transform: translate(-50%, -90%);
     display: flex;
     /* space-x-2; */
   }
@@ -356,7 +458,7 @@ body {
     position: absolute;
     width: 100%;
     top: 50%;
-    bottom: 6rem;
+    /* bottom: 6rem; */
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -393,41 +495,47 @@ body {
 
   .carousel-item > img{
     aspect-ratio: 3/2;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), 10px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .form{
+    width: 65%;
   }
 
   .carousel-content {
     position: absolute;
-    top: 83%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: transparent;
-    color: black;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
     padding: 1rem;
-    width: 100%;
-    max-width: 90%;
+    max-width: 50%;
     margin-inline: auto;
     border-radius: 10px;
+    gap: 20px;
   }
 
   .heading {
-    font-size: 2.2rem;
-    color: #2563eb;
+    font-size: 1.8rem;
+    color: rgb(41, 184, 103);
     /* margin-top: 50px; */
   }
 
   .carouselText{
-    font-size: 1.3rem;
+    font-size: 1.15rem;
   }
 
   .btnIntro {
-    border-color: #2563eb;
-    color: #2563eb;
-    margin-bottom: 2.2rem;
+    border-color: rgb(44, 193, 108);
+    color: rgb(44, 193, 108);
+    background-color: rgba(0, 0, 0, 0.6);
     font-weight: 600;
+    font-size: 1rem;
   }
 
   .btnIntro:hover {
-    background-color: #2563eb;
+    background-color: rgb(44, 193, 108);
     color: white;
   }
 
@@ -438,9 +546,9 @@ body {
 
   .carousel-navigation{
     position: absolute;
-    top: 70%;
+    top: 90%;
     left: 50%;
-    transform: translate(-50%, -65%);
+    transform: translate(-50%, -90%);
     display: flex;
     /* space-x-2; */
   }
@@ -450,7 +558,7 @@ body {
     position: absolute;
     width: 100%;
     top: 50%;
-    bottom: 10rem;
+    /* bottom: 10rem; */
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -465,6 +573,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(41, 184, 103);
   }
 
   .NavBar {
@@ -486,13 +595,14 @@ body {
 
   .carousel-item > img{
     aspect-ratio: 4/3;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), 10px 10px 20px rgba(0, 0, 0, 0.2);
   }
 
   .carousel-controls{
     position: absolute;
     width: 100%;
     top: 50%;
-    bottom: 10rem;
+    /* bottom: 10rem; */
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -500,6 +610,86 @@ body {
     /* space-x-2; */
   }
    
+  .navigation-circle {
+    width: 15px;
+    height: 15px;
+  }
+
+  .form{
+    width: 60%;
+  }
+
+  .btnIntro:hover {
+    background-color: rgb(44, 193, 108);
+    color: white;
+  }
+
+  .prev, .next {
+    width: 50px;
+    height: 50px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-navigation{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+    display: flex;
+    /* space-x-2; */
+  }
+
+  .heading {
+    font-size: 2.2rem;
+    color: rgb(41, 184, 103);
+    /* margin-top: 50px; */
+  }
+
+  .carousel-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (min-width: 1080px) and (max-width: 1920px){
+  .carousel-container {
+    width: 100%;
+    height: 1024px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .carousel-item > img{
+    aspect-ratio: 3/2;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), 10px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .carousel-controls{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    /* bottom: 15rem; */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    /* space-x-2; */
+  }
+  
+  .carousel-content{
+    gap: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: transparent; */
+  }
+
   .navigation-circle {
     width: 15px;
     height: 15px;
@@ -516,23 +706,33 @@ body {
 
   .carousel-navigation{
     position: absolute;
-    top: 85%;
+    top: 90%;
     left: 50%;
     transform: translate(-50%, -85%);
     display: flex;
     /* space-x-2; */
   }
 
+  .btnIntro{
+    background-color: rgba(0, 0, 0, 0.6);
+    border-color: rgb(44, 193, 108);
+  }
+
+  .btnIntro:hover {
+    background-color: rgb(44, 193, 108);
+    color: white;
+  }
+
   .heading {
-    font-size: 2.2rem;
-    color: #3172fc;
+    font-size: 2rem;
+    color: rgb(41, 184, 103);
     /* margin-top: 50px; */
   }
 
   .carousel-content{
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -30%);
+    transform: translate(-50%, -50%);
   }
 }

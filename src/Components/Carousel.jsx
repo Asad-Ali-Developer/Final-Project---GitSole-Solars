@@ -4,16 +4,16 @@ const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    { image: 'images/banner.jpg', heading: 'Heading 1', text: 'Text for image 1.', buttons: ['Button 1', 'Button 2'] },
-    { image: 'images/banner2.jpg', heading: 'Heading 2', text: 'Text for image 2.', buttons: ['Button 1', 'Button 2'] },
-    { image: 'images/banner3.jpg', heading: 'Heading 3', text: 'Text for image 3.', buttons: ['Button 1', 'Button 2'] },
-    { image: 'images/banner4.jpg', heading: 'Heading 4', text: 'Text for image 4.', buttons: ['Button 1', 'Button 2'] },
+    { image: 'images/banner.jpg'},
+    { image: 'images/banner2.jpg'},
+    { image: 'images/banner3.jpg'},
+    { image: 'images/banner4.jpg'}
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide === slides.length - 1 ? 0 : prevSlide + 1));
-    }, 10000);
+    }, 7000);
 
     return () => clearInterval(interval);
   }, [slides.length]);
@@ -48,12 +48,12 @@ const Carousel = () => {
 
       <div className="carousel-controls flex justify-between absolute top-1/2 left-0 right-0 transform -translate-y-1/2">
         <button className="prev" onClick={prevSlide}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} fill="#fff">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} fill="#fff"  color='white'>
             <path d="M15 6C15 6 9 10.4189 9 12C8.99999 13.5812 15 18 15 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </button>
         <button className="next" onClick={nextSlide}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} fill="#fff">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} fill="#fff" color='white'>
             <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </button>
